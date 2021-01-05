@@ -1,0 +1,18 @@
+[Unit]
+Description=Flask Server for Light Duty Web Apps
+After=network.target 
+#ConditionPathExists=/home/pi/.local/bin/flask
+
+[Service]
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/gh-gallery
+EnvironmentFile=/home/pi/gh-gallery/flask-env
+ExecStart=/home/pi/.local/bin/flask run
+KillMode=process
+Restart=on-failure
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+Alias=flask.service

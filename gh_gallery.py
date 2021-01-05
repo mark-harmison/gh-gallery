@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-IMAGE_DIR = pathlib.Path("/Users/mark/git-personal/gh-gallery/test-images")
+IMAGE_DIR = pathlib.Path(os.environ["IMAGE_DIR"])
 STRIP_RE = re.compile("(_.+$)")
 
 
@@ -33,6 +33,8 @@ def get_sort_from_file_name(fn):
         return stem[stem.index("_") + 1:].lower() + stem.lower()
     if " " in stem:
         return stem[stem.index(" ") + 1:].lower() + stem.lower()
+    else:
+        return stem
 
 
 @app.route('/gh')
@@ -72,7 +74,7 @@ def gallery():
     with open(config_path, "r") as fd:
         config = json.load(fd)
 
-    file_list = os.listdir('test-images/')
+    file_list = os.listdir(IMAGE_DIR)
     file_list = [{"title": get_title_from_file_name(fn),
                   "sort": get_sort_from_file_name(fn),
                   "file": fn} for fn in file_list if fn != "config.json"]
