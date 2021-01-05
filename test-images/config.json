@@ -1,0 +1,8 @@
+{
+    "cellWidth": 240,
+    "captionHeight": 20,
+    "captionFont": "Arial, serif",
+    "backgroundColor": "#3c3f41",
+    "captionFontColor": "gainsboro",
+    "refreshInterval": 5
+}

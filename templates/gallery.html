@@ -1,0 +1,43 @@
+<!doctype html>
+<title>Green Hills Family</title>
+<head>
+    <meta http-equiv="refresh" content="{{ config.refreshInterval }}" >
+    <style>
+        body {
+            background-color: {{ config.backgroundColor }};
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cell {
+            display: inline-block;
+            width: {{ config.cellWidth }}px;
+            height: {{ config.cellWidth }}px;
+        }
+
+        .hs {
+            width: {{ config.cellWidth }}px;
+            height: {{ config.cellWidth - config.captionHeight - 10}}px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .title {
+            color: {{ config.captionFontColor }};
+            font-family: {{ config.captionFont }};
+            font-size: {{ config.captionHeight }}px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% for f in file_list %}
+    <div class="cell">
+        <img src="/test-images/{{ f.file }}" class="hs">
+        <div class="title">{{ f.title }}</div>
+    </div>
+{% endfor %}
+</body>
