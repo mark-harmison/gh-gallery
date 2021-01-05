@@ -74,6 +74,8 @@ def gallery():
     with open(config_path, "r") as fd:
         config = json.load(fd)
 
+    config['imageDir'] = IMAGE_DIR
+
     file_list = os.listdir(IMAGE_DIR)
     file_list = [{"title": get_title_from_file_name(fn),
                   "sort": get_sort_from_file_name(fn),
