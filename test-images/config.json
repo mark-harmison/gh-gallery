@@ -1,6 +1,7 @@
 {
-    "cellWidth": 240,
-    "captionHeight": 20,
+    "cellWidth": 192,
+    "cellHeight": 240,
+    "captionHeight": 15,
     "captionFont": "Arial, serif",
     "backgroundColor": "#3c3f41",
     "captionFontColor": "gainsboro",

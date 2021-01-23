@@ -16,12 +16,12 @@
         .cell {
             display: inline-block;
             width: {{ config.cellWidth }}px;
-            height: {{ config.cellWidth }}px;
+            height: {{ config.cellHeight }}px;
         }
 
         .hs {
             width: {{ config.cellWidth }}px;
-            height: {{ config.cellWidth - config.captionHeight - 10}}px;
+            height: {{ config.cellHeight - config.captionHeight - 10}}px;
             object-fit: cover;
             overflow: hidden;
         }

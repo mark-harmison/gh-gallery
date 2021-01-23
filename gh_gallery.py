@@ -62,6 +62,7 @@ def gallery():
     if not config_path.exists():
         config = {
             "cellWidth": 240,
+            "cellHeight": 240,
             "captionHeight": 20,
             "captionFont": "Arial, serif",
             "backgroundColor": "#3c3f41",
